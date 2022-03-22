@@ -1,0 +1,93 @@
+package Projcet;
+
+
+	   	   
+	   	
+
+	   	import java.util.Date;
+	   	import java.util.Scanner;
+
+	   	/*
+	   	* Blood Donation System
+	   	*/
+
+	   	class Donar{
+	   	Date date = new Date();
+	   		int Donar_Id ;
+	   		String  Donar_Name,Donar_Blood_Group ,Donar_Medical_report,Donar_Address,Donar_Contact_number;
+	   	   
+	   	   Donar(  String Donar_Name ,int Donar_Id ,String Donar_Blood_Group,String Donar_Medical_report
+	   	           ,String Donar_Address,String Donar_Contact_number)
+	   	   {
+	   	   	this.Donar_Name=Donar_Name;
+	   	   	this.Donar_Id=Donar_Id;
+	   	   	this.Donar_Blood_Group=Donar_Blood_Group;
+	   	   	this.Donar_Medical_report=Donar_Medical_report;
+	   	   	this.Donar_Address=Donar_Address;
+	   	   	this.Donar_Contact_number=Donar_Contact_number;
+	   	   }
+	   	   void display() 
+	   	   {
+	   	   	System.out.println(Donar_Name+Donar_Id+Donar_Blood_Group +Donar_Medical_report+Donar_Address+Donar_Contact_number);
+	   	   }
+	   	   public Date getDate() {
+	   			return date;
+	   		}
+	   	}
+	   	class Blood_Bank extends Donar{
+	   		
+	   		String Blood_Bank_Name , Blood_bank_Donars_name,Blood_Bank_Address, Blood_Bank_Contact_Number;
+	   		   Blood_Bank(String Donar_Name, int Donar_Id, String Donar_Blood_Group, String Donar_Medical_report,
+	   				   String Donar_Address, String Donar_Contact_number,String Blood_Bank_Name ,
+	   				   String Blood_bank_Donars_name,String Blood_Bank_Address, String Blood_Bank_Contact_Number) 
+	   		   {
+	   			super(Donar_Name, Donar_Id, Donar_Blood_Group, Donar_Medical_report, Donar_Address, Donar_Contact_number);
+	   			
+	   			    this.Blood_Bank_Name=Blood_Bank_Name ;
+	   			    this.Blood_bank_Donars_name=Blood_bank_Donars_name;
+	   			    this.Blood_Bank_Address=Blood_Bank_Address;
+	   			    this.Blood_Bank_Contact_Number=Blood_Bank_Contact_Number;
+	   		}
+	   		   @Override
+	   		   void display() {
+	   			   System.out.println(Donar_Name+Donar_Id+Donar_Blood_Group +Donar_Medical_report
+	   					   +Donar_Address+Donar_Contact_number+Blood_Bank_Name +Blood_bank_Donars_name 
+	   					   +Blood_Bank_Address+Blood_Bank_Contact_Number);
+	   		   }
+	   		    
+	   	}
+	   		   class Patient extends Blood_Bank{
+	   		    int Patient_Id;
+	   			   String Patient_Name , Patient_Blood_Group ,Patient_Disease;
+	   			   
+	   			   Patient() 
+	   			   {
+	   				super(Donar_Name, Donar_Id, Donar_Blood_Group, Donar_Medical_report, Donar_Address, Donar_Contact_number,
+	   						Blood_Bank_Name, Blood_bank_Donars_name, Blood_Bank_Address, Blood_Bank_Contact_Number);
+	   				
+	   				this.Patient_Name=Patient_Name;
+	   				this.Patient_Id=Patient_Id;
+	   				this.Patient_Blood_Group=Patient_Blood_Group;
+	   				this.Patient_Disease=Patent_Disease;   
+	   		   }
+	   			   @Override
+	   			   void display() {
+	   				System.out.println("Donar Name               : " +Donar_Name +"\nDonar ID                 : "+Donar_Id 
+	   						+"\nDonar Blood Group        : "+Donar_Blood_Group
+	   						+"\nDonar Medical Report     : "+Donar_Medical_report+"\nDonar Address            : "+Donar_Address 
+	   						+"\nDonar Contact Number     : "+Donar_Contact_number+"\nBlood Bank Name          : "+Blood_Bank_Name 
+	   						+"\nBlood Bank Donar's Name  : "+Blood_bank_Donars_name +"\nBlood Bank Address       : "+Blood_Bank_Address 
+	   						+"\nBlood Bank Contact Number: "+Blood_Bank_Contact_Number +"\nPatient Name             : "+Patient_Name 
+	   						+"\nPatient ID               : "+Patient_Id +"\nPatient Blood Group      : "+Patient_Blood_Group 
+	   						+"\nPatient Disease          : "+Patient_Disease);
+	   			   }
+
+	   			public static void main(String[] args) {
+	   				
+	   		
+	   				
+	   				Patient object = new Patient ();
+	   				System.out.println("Date \t\t\t : "+object.getDate());
+	   				System.out.println(object.getDate());
+	   		   }
+	   		   }
